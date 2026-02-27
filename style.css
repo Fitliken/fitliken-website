@@ -90,6 +90,14 @@ h1, h2, h3
     }
   }
 
+  .gigs-grid
+  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+  }
+
   .grid
   {
     display: grid;
@@ -227,6 +235,53 @@ a:hover
   transform: translateY(-2px);
 }
 
+.gigs, .page {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.gigs h2, h1 {
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  max-width: 70ch;
+  margin: 0 auto 30px;
+  opacity: 0.85;
+}
+
+.gig {
+  padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  max-width: 720px;
+  margin: 0 auto 14px;
+}
+
+.gig-date {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.gig-info {
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+.more-gigs {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+.more-gigs a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+}
+
+.more-gigs a:hover {
+  border-bottom-color: rgba(255,255,255,.85);
+}
+
 @media (max-width: 768px) {
 
   body {
@@ -253,4 +308,12 @@ a:hover
     width: 85%;
   }
 
+  .hero-tagline {
+    margin-top: 25px;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+  }
 }
