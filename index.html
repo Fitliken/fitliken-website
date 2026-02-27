@@ -166,7 +166,52 @@
         gtag('config', 'G-6ED1C7PGFL', {
           anonymize_ip: true
         });
-      </script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+        function trackEvent(eventName, params) {
+          if (typeof gtag === "function") {
+            gtag("event", eventName, params);
+          }
+        }
+
+        // Book Now button
+        const bookBtn = document.getElementById("bookNowBtn");
+        if (bookBtn) {
+          bookBtn.addEventListener("click", function() {
+            trackEvent("booking_event", {
+              type: "book_now_button",
+              location: "hero_section"
+            });
+          });
+        }
+
+        // Contact section link
+        const contactLink = document.getElementById("contactLink");
+        if (contactLink) {
+          contactLink.addEventListener("click", function() {
+            trackEvent("booking_event", {
+              type: "contact_section_link",
+              location: "page_navigation"
+            });
+          });
+        }
+
+        // Email click
+        const emailLink = document.getElementById("emailLink");
+        if (emailLink) {
+          emailLink.addEventListener("click", function() {
+            trackEvent("email_send_event", {
+              email_address: "band@fitliken.co.uk",
+              location: "contact_section",
+              transport_type: "beacon"
+            });
+          });
+        }
+
+        });
+
+  </script>
 </head>
 <body>
     <section class="hero">
@@ -185,7 +230,7 @@
         </div>
         <div class="hero-buttons">
           <a href="https://youtube.com/@Fitliken" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Watch More</a>
-          <a href="#contact" class="btn btn-solid">Book Now</a>
+          <a href="#contact" id="bookNowBtn" class="btn btn-solid">Book Now</a>
         </div>
       </div>
     </section>
@@ -220,7 +265,7 @@
         </div>
 
         <p class="more-gigs">
-          For bookings, head to the <a href="#contact">contact section</a>.
+          For bookings, head to the <a href="#contact" id="contactLink">contact section</a>.
         </p>
       </div>
     </section>
@@ -301,7 +346,7 @@
       <div class="container">
         <div class="accentred">
           <h1>Contact Us</h1>
-          <p class="section-intro">Available for bookings across Aberdeen & Aberdeenshire. For bookings and enquiries please email <a href="mailto:band&#64;fitliken.co.uk">band&#64;fitliken.co.uk</a>.</p>
+          <p class="section-intro">Available for bookings across Aberdeen & Aberdeenshire. For bookings and enquiries please email <a href="mailto:band&#64;fitliken.co.uk" id="emailLink">band&#64;fitliken.co.uk</a>.</p>
           <div class="social">
             <!-- Facebook -->
             <a href="https://facebook.com/fitliken" target="_blank" aria-label="Facebook">
