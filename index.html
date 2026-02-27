@@ -203,7 +203,8 @@
           emailLink.addEventListener("click", function() {
             trackEvent("email_send_event", {
               email_address: "band@fitliken.co.uk",
-              location: "contact_section"
+              location: "contact_section",
+              transport_type: "beacon"
             });
           });
         }
