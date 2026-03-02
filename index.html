@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload=""this.media='all'"">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="sthis.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
@@ -216,18 +216,17 @@
         document.addEventListener("click", function(e){
           const btn = e.target.closest(".video-poster");
           if(!btn) return;
-          const shell = btn.closest(".video-shell");
+          const shell = btn.closest(".video-frame");
           const id = shell?.dataset?.videoId;
           if(!id) return;
 
           shell.innerHTML = `
             <iframe
               src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
-              title="Fitliken Gets a New Drummer"
-              loading="lazy"
+              title="Fitliken live video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
-              style="width:100%; aspect-ratio:16/9; border:0; border-radius:16px;">
+              style="width:100%; aspect-ratio:16/9; border:0; display:block;">
             </iframe>`;
         });
 
@@ -248,9 +247,9 @@
     <section>
       <main role="main">
         <div class="section">
-          <div class="video-shell" data-video-id="NtrtqUsxW28">
+          <div class="video-frame" data-video-id="NtrtqUsxW28">
             <button class="video-poster" type="button" aria-label="Play video">
-              <img src="https://i.ytimg.com/vi/NtrtqUsxW28/hqdefault.jpg" alt="Fitliken Gets a New Drummer" loading="lazy">
+              <img src="https://i.ytimg.com/vi/NtrtqUsxW28/hqdefault.jpg" alt="Fitliken live video thumbnail" loading="lazy">
               <span class="play"></span>
             </button>
           </div>

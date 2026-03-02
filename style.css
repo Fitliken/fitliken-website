@@ -318,14 +318,29 @@ a:hover
   }
 }
 
-.video-shell { max-width: 900px; margin: 0 auto; }
+.video-frame {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;          /* key: trims corners equally */
+  background: #000;          /* stops edge glow */
+  aspect-ratio: 16 / 9;
+}
+
+.video-poster,
+.video-frame iframe,
+.video-frame .video-poster img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 .video-poster{
   position: relative;
   display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
+  padding: 0 !important;
+  border: 0 !important;
   background: transparent;
   cursor: pointer;
 }
@@ -333,8 +348,10 @@ a:hover
 .video-poster img{
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 16px;
+  height: 100%;
+  border-radius: 0;
+  display: block;
+  object-fit: cover;
 }
 
 .video-poster .play{
