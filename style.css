@@ -1,7 +1,7 @@
 html
 {
     background: #0f0f0f;
-    color: #cfcfcf;
+    color: #f7f7f9;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
 }
@@ -16,6 +16,7 @@ body
 {
     width: 100%;
     background: #161616;
+    padding: 25px 0 10px 0;
 }
 
 h1, h2, h3
@@ -25,45 +26,63 @@ h1, h2, h3
     margin: 25px;
 }
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 65vh;
-    background: url("images/hero.webp") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align:
-     center;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    padding: 0 20px;
-    transform: translateY(-5%); /* slightly above centre */
-  }
-  
-  .hero-logo {
-    max-width: 700px;
-    width: 80%;
-    height: auto;
-  }
-  
-  .hero-tagline {
-    margin-top: 25px;
-    font-family: 'Anton', sans-serif;
-    font-size: 2rem;
-    color: white;
-    letter-spacing: 1px;
-  }
+.hero{
+  position: relative;
+  min-height: 65vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  z-index: 0;
+}
+
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hero-inner{
+  text-align: center;
+  padding: 3rem 1rem; /* content padding lives here */
+}
+
+.hero-logo{
+  width: clamp(220px, 40vw, 520px);
+  height: auto;
+}
+
+.hero-tagline{
+  margin: 1rem 0 0; /* your previous margin-top line was invalid */
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
 
   .accentred {
     max-width: 1200px;
@@ -282,7 +301,74 @@ a:hover
   border-bottom-color: rgba(255,255,255,.85);
 }
 
-@media (max-width: 768px) {
+.video-frame {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;          /* key: trims corners equally */
+  background: #000;          /* stops edge glow */
+  aspect-ratio: 16 / 9;
+}
+
+.video-poster,
+.video-frame iframe,
+.video-frame .video-poster img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.video-poster{
+  position: relative;
+  display: block;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-poster img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.video-poster .play{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* the circular button */
+.video-poster .play::before{
+  content:"";
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.45);
+  border: 2px solid rgba(255,255,255,.9);
+}
+
+/* the triangle */
+.video-poster .play::after{
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 6px;
+  border-left: 18px solid rgba(255,255,255,.95);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+@media (max-width: 600px) {
 
   body {
     font-size: 10pt;
@@ -308,12 +394,20 @@ a:hover
     width: 85%;
   }
 
-  .hero-tagline {
-    margin-top: 25px;
-    font-family: 'Anton', sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    letter-spacing: 1px;
-    text-align: center;
+  .hero{
+    min-height: 70vh;              /* gives the text room */
+  }
+
+  .hero-logo{
+    width: clamp(220px, 70vw, 360px);
+  }
+
+  .hero-tagline{
+    font-size: clamp(0.95rem, 4.6vw, 1.2rem);
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    max-width: 22ch;               /* stops it going too wide */
+    margin: 1rem auto 0;
+    text-wrap: balance;            /* modern browsers: nicer line breaks */
   }
 }
