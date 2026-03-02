@@ -301,42 +301,6 @@ a:hover
   border-bottom-color: rgba(255,255,255,.85);
 }
 
-@media (max-width: 768px) {
-
-  body {
-    font-size: 10pt;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .hero-buttons {
-    gap: 12px;
-  }
-
-  .btn {
-    padding: 12px 20px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  p {
-    width: 85%;
-  }
-
-  .hero-tagline {
-    margin-top: 25px;
-    font-family: 'Anton', sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-}
-
 .video-frame {
   width: 100%;
   max-width: 900px;
@@ -402,4 +366,48 @@ a:hover
   border-left: 18px solid rgba(255,255,255,.95);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
+}
+
+@media (max-width: 600px) {
+
+  body {
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  p {
+    width: 85%;
+  }
+
+  .hero{
+    min-height: 70vh;              /* gives the text room */
+  }
+
+  .hero-logo{
+    width: clamp(220px, 70vw, 360px);
+  }
+
+  .hero-tagline{
+    font-size: clamp(0.95rem, 4.6vw, 1.2rem);
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    max-width: 22ch;               /* stops it going too wide */
+    margin: 1rem auto 0;
+    text-wrap: balance;            /* modern browsers: nicer line breaks */
+  }
 }
