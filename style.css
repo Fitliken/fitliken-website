@@ -40,7 +40,7 @@ h1, h2, h3
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 50% 35%;
   z-index: 0;
 }
 
@@ -48,7 +48,12 @@ h1, h2, h3
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.65));
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,0.55) 100%
+  );
+  pointer-events: none;
 }
 
 .hero-content{
@@ -65,7 +70,7 @@ h1, h2, h3
 }
 
 .hero-logo{
-  width: clamp(240px, 45vw, 600px);
+  width: clamp(220px, 40vw, 520px);
   height: auto;
 }
 
@@ -76,6 +81,7 @@ h1, h2, h3
   color: white;
   letter-spacing: 1px;
   text-align: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
   .accentred {
