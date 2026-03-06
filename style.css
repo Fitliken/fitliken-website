@@ -129,6 +129,131 @@ h1, h2, h3
     transform: translateY(-3px);
   }
 
+  .gig {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    min-height: 100px;
+    padding: 20px 20px 18px;
+    padding-bottom: 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+
+  .gig:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 10px 25px rgba(0,0,0,0.35),
+      0 0 20px rgba(255,255,255,0.1);
+  }
+
+  .gig.next-show {
+    border-color: rgba(255,255,255,0.35);
+    animation: nextShowGlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes nextShowGlow {
+    0% {
+      box-shadow: 0 0 8px rgba(255,255,255,0.05);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255,255,255,0.25);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(255,255,255,0.05);
+    }
+  }
+  
+  .gig-top-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  
+  .gig-date {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .gig-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    min-height: 2.8em;
+  }
+
+  .gig-info::after {
+    content: "→ Event Details";
+    font-size: 0.85em;
+    margin-left: px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .gig:hover .gig-info::after {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  
+  .gig-text {
+    line-height: 1.35;
+    flex: 1;
+  }
+  
+  .gig-event {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .gig-event:hover {
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  
+  .gig-event svg {
+    display: block;
+    fill: currentColor;
+  }
+  
+  .next-show-badge {
+    display: inline-block;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.7);
+    white-space: nowrap;
+    line-height: 1;
+    height: 12px;
+  }
+
+  .next-no-show-badge {
+    display: inline-block;
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background: transparent;
+    color: #fff;
+    border: none;
+    white-space: nowrap;
+    line-height: 1;
+    height: 12px;
+  }
+
   .setlisttext
   {
     text-align: center;
