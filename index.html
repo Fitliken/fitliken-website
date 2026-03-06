@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Fitliken | Classic Rock Covers Band in Aberdeen, Scotland</title>  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <meta name="description" content="Fitliken are a classic rock covers band from Aberdeen, playing 70s stadium rock classics through to modern anthems for pubs, clubs, rallies, and private events across Aberdeenshire.">
+  <title>Fitliken | Classic Rock Covers Band in Aberdeen, Scotland</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Fitliken are a classic rock covers band from Aberdeen, playing 70s stadium rock classics through to modern anthems for pubs, clubs, rallies, and private events across Aberdeenshire.">
   <meta name="theme-color" content="#0f0f0f">
   <meta name="robots" content="index, follow">
   <meta property="og:site_name" content="Fitliken">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fitliken | Classic Rock Covers Band in Aberdeen, Scotland">
-  <meta name="twitter:description" content="Live rock covers from 70s classics to modern anthems across Aberdeen & Aberdeenshire.">
+  <meta name="twitter:description"
+    content="Live rock covers from 70s classics to modern anthems across Aberdeen & Aberdeenshire.">
   <meta name="twitter:image" content="https://fitliken.co.uk/images/hero.webp">
   <meta property="og:title" content="Fitliken | High-Energy Rock Covers">
   <meta property="og:description" content="Live rock covers from 70s classics to modern anthems. Pubs. Clubs. Rallies.">
@@ -27,7 +30,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
@@ -49,359 +53,28 @@
         "name": "Aberdeen & Aberdeenshire, Scotland"
       }
     }
-  </script>
-  <script type="application/ld+json" id="gigs-structured-data"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ED1C7PGFL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-6ED1C7PGFL', {
-      anonymize_ip: true
-    });
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-    function trackEvent(eventName, params) {
-      if (typeof gtag === "function") {
-        gtag("event", eventName, params);
-      }
-    }
-
-    // Book Now button
-    const bookBtn = document.getElementById("bookNowBtn");
-    if (bookBtn) {
-      bookBtn.addEventListener("click", function() {
-        trackEvent("booking_event", {
-          type: "book_now_button",
-          location: "hero_section"
-        });
-      });
-    }
-
-    // Contact section link
-    const contactLink = document.getElementById("contactLink");
-    if (contactLink) {
-      contactLink.addEventListener("click", function() {
-        trackEvent("booking_event", {
-          type: "contact_section_link",
-          location: "page_navigation"
-        });
-      });
-    }
-
-    // Email click
-    const emailLink = document.getElementById("emailLink");
-    if (emailLink) {
-      emailLink.addEventListener("click", function() {
-        trackEvent("email_send_event", {
-          email_address: "band@fitliken.co.uk",
-          location: "contact_section",
-          transport_type: "beacon"
-        });
-      });
-    }
-
-    });
-
-    document.addEventListener("click", function(e){
-      const btn = e.target.closest(".video-poster");
-      if(!btn) return;
-      const shell = btn.closest(".video-frame");
-      const id = shell?.dataset?.videoId;
-      if(!id) return;
-
-      shell.innerHTML = `
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
-          title="Fitliken live video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="width:100%; aspect-ratio:16/9; border:0; display:block;">
-        </iframe>`;
-    });
-  </script>
-</head>
-<body>
-    <section class="hero">
-      <header role="banner">
-        <img src="images/hero.webp" alt="Fitliken live in Aberdeen" class="hero-img">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <div class="hero-inner">
-            <img src="images/logo.webp" class="hero-logo" alt="Fitliken Logo">
-            <p class="hero-tagline">High-energy rock covers from the 70s to today</p>
-          </div>
-        </div>
-      </header>
-    </section>
-    <section>
-      <main role="main">
-        <div class="section">
-          <div class="video-frame" data-video-id="NtrtqUsxW28">
-            <button class="video-poster" type="button" aria-label="Play video">
-              <img src="https://i.ytimg.com/vi/NtrtqUsxW28/hqdefault.jpg" alt="Fitliken live video thumbnail" loading="lazy">
-              <span class="play"></span>
-            </button>
-          </div>
-          <div class="hero-buttons">
-            <a href="https://youtube.com/@Fitliken" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Watch More</a>
-            <a href="#contact" id="bookNowBtn" class="btn btn-solid">Book Now</a>
-          </div>
-        </div>
-      </section>
-      <section class="page" aria-label="Upcoming gigs">
-        <div class="container">
-          <h1>Upcoming Gigs</h1>
-          <p class="section-intro">
-            Fitliken perform across Aberdeen and Aberdeenshire—pubs, clubs, rallies and private events.
-          </p>
-          <div class="gigs-grid" id="gigs-grid-container">
-          </div>
-          <p class="more-gigs">For bookings, head to the <a href="#contact" id="contactLink">contact section</a>.</p>
-        </div>
-      </section>
-      <section class="page">
-        <div class="accentred">
-            <div class="container">
-              <h1>Set List Favourites</h1>
-              <p class="section-intro">Fitliken play a wide range of songs from classic rock anthems through to modern crowd favourites</p>
-              <div class="grid">
-                <p class="setlisttext">AC/DC</p>
-                <p class="setlisttext">Foo Fighters</p>
-                <p class="setlisttext">Thin Lizzy</p>
-                <p class="setlisttext">Green Day</p>
-                <p class="setlisttext">Metallica</p>
-                <p class="setlisttext">The Darkness</p>
-                <p class="setlisttext">Guns N' Roses</p>
-                <p class="setlisttext">Bon Jovi</p>
-                <p class="setlisttext">Gun</p>
-              </div>
-            </div>
-        </div>
-      </section>
-      <section>
-        <div>
-          <div class="grid">
-            <div class="thumb">
-              <a href="images/photos/full/fitliken-live-in-sandend-2023.jpg" class="glightbox" data-gallery="fitliken" data-title="Fitliken live in Sandend 2023" aria-label="Fitliken live in Sandend 2023">
-                <img src="images/photos/thumb/fitliken-live-in-sandend-2023.jpg" alt="Fitliken live in Sandend 2023" loading="lazy" />
-              </a>
-            </div>
-            <div class="thumb">
-              <a href="images/photos/full/ali-singer-with-the-band-fitliken.jpg" class="glightbox" data-gallery="fitliken" data-title="Ali – vocals" aria-label="Ali, singer with the band Fitliken">
-                <img src="images/photos/thumb/ali-singer-with-the-band-fitliken.jpg" alt="Ali, singer with the band Fitliken" loading="lazy" />
-              </a>
-            </div>
-            <div class="thumb">
-              <a href="images/photos/full/chris-guitarist-with-the-band-fitliken.jpg" class="glightbox" data-gallery="fitliken" data-title="Chris – guitar" arial-label="Chris, guitarist with the band Fitliken">
-                <img src="images/photos/thumb/chris-guitarist-with-the-band-fitliken.jpg" alt="Chris, guitarist with the band Fitliken" loading="lazy" />
-              </a>
-            </div>
-            <div class="thumb">
-              <a href="images/photos/full/david-bassist-with-the-band-fitliken.jpg" class="glightbox" data-gallery="fitliken" data-title="David – bass" aria-label="David, bassist with the band Fitliken">
-                <img src="images/photos/thumb/david-bassist-with-the-band-fitliken.jpg" alt="David, bassist with the band Fitliken" loading="lazy" />
-              </a>
-            </div>
-            <div class="thumb">
-              <a href="images/photos/full/the-current-fitliken-lineup-2026.jpg" class="glightbox" data-gallery="fitliken" data-title="Fitliken lineup 2026" aria-label="The current 2026 Fitliken lineup">
-                <img src="images/photos/thumb/the-current-fitliken-lineup-2026.jpg" alt="The current 2026 Fitliken lineup" loading="lazy" />
-              </a>
-            </div>
-            <div class="thumb">
-              <a href="images/photos/full/fitliken-playing-live-sandend-2025.jpg" class="glightbox" data-gallery="fitliken" data-title="Fitliken playing live in Sandend 2025" aria-label="Fitliken playing live in Sandend 2025">
-                <img src="images/photos/thumb/fitliken-playing-live-sandend-2025.jpg" alt="Fitliken playing live in Sandend 2025" loading="lazy" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="page">
-        <div class="container">
-          <div class="accentorange">
-            <h1>About the Band</h1>
-            <p>Fitliken are a high-energy classic rock covers band based in Aberdeen, built for busy dancefloors and packed weekend venues.</p>
-            <p>Blending timeless rock anthems with modern favourites, the band deliver tight, engaging performances that keep crowds involved from first song to last. Expect big choruses, sharp stops and memorable finishes — all played with precision and purpose.</p>
-            <p>Fitliken pride themselves on reading the room. Whether it’s a lively Saturday night in a city-centre pub, a harbour-side summer event, or a private function, the focus is always on the atmosphere — bringing the right level of energy for the space.</p>
-            <p>With professional sound, an efficient setup and a growing reputation across the North-East, Fitliken offer a reliable, polished live show that works for both venues and audiences alike.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer role="contentinfo">
-      <section id="contact" class="page">
-        <div class="container">
-          <div class="accentred">
-            <h1>Contact Us</h1>
-            <p class="section-intro">Available for bookings across Aberdeen & Aberdeenshire. For bookings and enquiries please email <a href="mailto:band&#64;fitliken.co.uk" id="emailLink">band&#64;fitliken.co.uk</a>.</p>
-            <div class="social">
-              <!-- Facebook -->
-              <a href="https://facebook.com/fitliken" target="_blank" aria-label="Facebook">
-                <svg viewBox="0 0 24 24">
-                  <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/>
-                </svg>
-              </a>
-              <!-- Instagram -->
-              <a href="https://instagram.com/fitliken" target="_blank" aria-label="Instagram">
-                <svg viewBox="0 0 24 24">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                </svg>
-              </a>
-              <!-- TikTok -->
-              <a href="https://tiktok.com/@fitlikenband" target="_blank" aria-label="TikTok">
-                <svg viewBox="0 0 24 24">
-                  <path d="M15 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.5V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3a2 2 0 1 0 2 2V3h2z"/>
-                </svg>
-              </a>
-              <!-- YouTube -->
-              <a href="https://youtube.com/@Fitliken" target="_blank" aria-label="YouTube">
-                <svg viewBox="0 0 24 24">
-                  <path d="M23 7s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17 3.5 12 3.5 12 3.5h0s-5 0-8.1.2c-.4 0-1.3.1-2.1 1C1.2 5.4 1 7 1 7S.8 8.9.8 10.8v2.3c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1C6 20.5 12 20.5 12 20.5s5 0 8.1-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-2.3C23.2 8.9 23 7 23 7zM10 15V9l6 3-6 3z"/>
-                </svg>
-              </a>
-            </div>
-            <p>All content &copy; Fitliken 2026.</p>
-          </div>
-        </div>
-      </section>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-      const lightbox = GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: true
-      });
-
-      fetch("https://script.google.com/macros/s/AKfycbwfAtrldEf6J_vvqhzh_6u9WvmJ6kIWizxfj-gjeZ19k6tVSr5eLQQzLyn06ABjDa8/exec")
-        .then(response => response.json())
-        .then(data => {
-
-          // update gigs
-          renderGigs(data.gigs || []);
-          renderStructuredData(data.gigs);
-        })
-        .catch(error => {
-          console.error("Failed to load gigs:", error);
-        });
-
-        function renderGigs(gigs) {
-          const container = document.getElementById("gigs-grid-container");
-          if (!container) return;
-
-          container.innerHTML = "";
-
-          gigs.forEach((gig, index) => {
-            const gigClass = index === 0 ? "gig next-show" : "gig";
-            const gigEl = document.createElement("div");
-            gigEl.className = gigClass;
-            gigEl.onclick = () => window.open(gig.url, "_blank");
-
-            const topRow = document.createElement("div");
-            topRow.className = "gig-top-row";
-
-            if (index === 0) {
-              const badge = document.createElement("span");
-              badge.className = "next-show-badge";
-              badge.textContent = "NEXT SHOW";
-              topRow.appendChild(badge);
-            } else {
-              const badge = document.createElement("span");
-              badge.className = "next-no-show-badge";
-              badge.textContent = "";
-              topRow.appendChild(badge);              
-            }
-
-            const dateEl = document.createElement("div");
-            dateEl.className = "gig-date";
-            dateEl.textContent = formatGigDate(gig.date);
-            topRow.appendChild(dateEl);
-
-            const infoEl = document.createElement("div");
-            infoEl.className = "gig-info";
-
-            const textEl = document.createElement("div");
-            textEl.className = "gig-text";
-            textEl.innerHTML = `<strong>${escapeHtml(gig.venue)}</strong> – ${escapeHtml(gig.town)}`;
-
-            infoEl.appendChild(textEl);
-            
-            gigEl.appendChild(topRow);
-            gigEl.appendChild(infoEl);
-            container.appendChild(gigEl);
-          });
-        }
-        
-        function formatGigDate(dateString) {
-          const date = new Date(dateString + "T12:00:00");
-          return date.toLocaleDateString("en-GB", {
-            weekday: "short",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-          });
-        }
-
-        function escapeHtml(str) {
-          return String(str)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#39;");
-        }
-
-        function escapeAttribute(str) {
-          return String(str).replace(/"/g, "&quot;");
-        }
-
-        function getUkOffset(dateString) {
-          const d = new Date(dateString + "T12:00:00");
-          const year = d.getFullYear();
-
-          const lastSunday = (month) => {
-            const lastDay = new Date(year, month + 1, 0);
-            const day = lastDay.getDay();
-            return lastDay.getDate() - day;
-          };
-
-          const bstStart = new Date(year, 2, lastSunday(2), 1, 0, 0);   // last Sunday in March
-          const bstEnd   = new Date(year, 9, lastSunday(9), 1, 0, 0);   // last Sunday in October
-
-          return d >= bstStart && d < bstEnd ? "+01:00" : "+00:00";
-        }
-
-        function buildStartDate(gig) {
-          if (!gig.date) return null;
-
-          const time = gig.time && gig.time.trim() ? gig.time.trim() : "20:00";
-          const offset = getUkOffset(gig.date);
-
-          return `${gig.date}T${time}:00${offset}`;
-        }
-
-        function renderStructuredData(gigs) {
-          const now = new Date();
-
-          const upcoming = gigs
-            .filter(g => g.date && new Date(g.date) >= new Date(now.toDateString()))
-            .sort((a, b) => new Date(a.date) - new Date(b.date));
-
-          const itemListElement = upcoming.map((gig, index) => ({
+    </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Fitliken Upcoming Gigs",
+        "itemListElement": [
+          {
             "@type": "ListItem",
-            "position": index + 1,
+            "position": 1,
             "item": {
               "@type": "MusicEvent",
-              "name": `Fitliken live at ${gig.venue}`,
-              "startDate": buildStartDate(gig),
+              "name": "Fitliken live at Balaclava Bar",
+              "startDate": "2026-03-28T21:30:00+00:00",
               "eventStatus": "https://schema.org/EventScheduled",
               "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
               "location": {
                 "@type": "Place",
-                "name": gig.venue,
+                "name": "Balaclava Bar",
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": gig.location,
+                  "addressLocality": "Fraserburgh",
                   "addressRegion": "Scotland",
                   "addressCountry": "GB"
                 }
@@ -409,20 +82,385 @@
               "performer": {
                 "@id": "https://fitliken.co.uk/#band"
               },
-              ...(gig.url ? { "url": gig.url } : {})
+              "url": "https://www.facebook.com/events/2132128340931852/"
             }
-          }));
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "MusicEvent",
+              "name": "Fitliken live at The New Greentrees",
+              "startDate": "2026-04-11T21:00:00+01:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": {
+                "@type": "Place",
+                "name": "The New Greentrees",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Dyce",
+                  "addressRegion": "Scotland",
+                  "addressCountry": "GB"
+                }
+              },
+              "performer": {
+                "@id": "https://fitliken.co.uk/#band"
+              },
+              "url": "https://www.facebook.com/events/1488272322717571/"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "MusicEvent",
+              "name": "Fitliken live at O'Donoghues",
+              "startDate": "2026-04-18T23:00:00+01:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": {
+                "@type": "Place",
+                "name": "O'Donoghues",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Aberdeen",
+                  "addressRegion": "Scotland",
+                  "addressCountry": "GB"
+                }
+              },
+              "performer": {
+                "@id": "https://fitliken.co.uk/#band"
+              },
+              "url": "https://www.facebook.com/events/916202884157015/"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "MusicEvent",
+              "name": "Fitliken live at Gray's Inn",
+              "startDate": "2026-05-03T16:00:00+00:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": {
+                "@type": "Place",
+                "name": "Gray's Inn",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Aberdeen",
+                  "addressRegion": "Scotland",
+                  "addressCountry": "GB"
+                }
+              },
+              "performer": {
+                "@id": "https://fitliken.co.uk/#band"
+              },
+              "url": "https://www.facebook.com/events/1611071800225831/"
+            }
+          }
+        ]
+      }
+      </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ED1C7PGFL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6ED1C7PGFL', {
+      anonymize_ip: true
+    });
 
-          const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Fitliken Upcoming Gigs",
-            "itemListElement": itemListElement
-          };
+    document.addEventListener("DOMContentLoaded", function () {
 
-          const scriptEl = document.getElementById("gigs-structured-data");
-          scriptEl.textContent = JSON.stringify(structuredData, null, 2);
+      function trackEvent(eventName, params) {
+        if (typeof gtag === "function") {
+          gtag("event", eventName, params);
         }
-    </script>
+      }
+
+      // Book Now button
+      const bookBtn = document.getElementById("bookNowBtn");
+      if (bookBtn) {
+        bookBtn.addEventListener("click", function () {
+          trackEvent("booking_event", {
+            type: "book_now_button",
+            location: "hero_section"
+          });
+        });
+      }
+
+      // Contact section link
+      const contactLink = document.getElementById("contactLink");
+      if (contactLink) {
+        contactLink.addEventListener("click", function () {
+          trackEvent("booking_event", {
+            type: "contact_section_link",
+            location: "page_navigation"
+          });
+        });
+      }
+
+      // Email click
+      const emailLink = document.getElementById("emailLink");
+      if (emailLink) {
+        emailLink.addEventListener("click", function () {
+          trackEvent("email_send_event", {
+            email_address: "band@fitliken.co.uk",
+            location: "contact_section",
+            transport_type: "beacon"
+          });
+        });
+      }
+
+    });
+
+    document.addEventListener("click", function (e) {
+      const btn = e.target.closest(".video-poster");
+      if (!btn) return;
+      const shell = btn.closest(".video-frame");
+      const id = shell?.dataset?.videoId;
+      if (!id) return;
+
+      shell.innerHTML = `
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
+              title="Fitliken live video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="width:100%; aspect-ratio:16/9; border:0; display:block;">
+            </iframe>`;
+    });
+
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <header role="banner">
+      <img src="images/hero.webp" alt="Fitliken live in Aberdeen" class="hero-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <img src="images/logo.webp" class="hero-logo" alt="Fitliken Logo">
+          <p class="hero-tagline">High-energy rock covers from the 70s to today</p>
+        </div>
+      </div>
+    </header>
+  </section>
+  <section>
+    <main role="main">
+      <div class="section">
+        <div class="video-frame" data-video-id="3zvPh6WXFSA">
+          <button class="video-poster" type="button" aria-label="Play video">
+            <img src="https://i.ytimg.com/vi/3zvPh6WXFSA/hqdefault.jpg" alt="Fitliken live video thumbnail"
+              loading="lazy">
+            <span class="play"></span>
+          </button>
+        </div>
+        <div class="hero-buttons">
+          <a href="https://youtube.com/@Fitliken" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline">Watch More</a>
+          <a href="#contact" id="bookNowBtn" class="btn btn-solid">Book Now</a>
+        </div>
+      </div>
+  </section>
+  <section class="page" aria-label="Upcoming gigs">
+    <div class="container">
+      <h1>Upcoming Gigs</h1>
+      <p class="section-intro">
+        Fitliken perform across Aberdeen and Aberdeenshire—pubs, clubs, rallies and private events.
+      </p>
+      <div class="gigs-grid" id="gigs-grid-container">
+
+        <div class="gig next-show" onclick="window.open('https://www.facebook.com/events/2132128340931852/', '_blank')">
+          <div class="gig-top-row">
+            <span class="next-show-badge">NEXT SHOW</span>
+            <div class="gig-date">Sat, 28 March 2026</div>
+          </div>
+          <div class="gig-info">
+            <div class="gig-text"><strong>Balaclava Bar</strong> – Fraserburgh
+            </div>
+          </div>
+        </div>
+
+        <div class="gig" onclick="window.open('https://www.facebook.com/events/1488272322717571/', '_blank')">
+          <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-date">Sat, 11 April 2026</div>
+          </div>
+          <div class="gig-info">
+            <div class="gig-text"><strong>The New Greentrees</strong> – Dyce</div>
+          </div>
+        </div>
+
+        <div class="gig" onclick="window.open('https://www.facebook.com/events/916202884157015/', '_blank')">
+          <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-date">Sat, 18 April 2026</div>
+          </div>
+          <div class="gig-info">
+            <div class="gig-text"><strong>O'Donoghues</strong> – Aberdeen</div>
+          </div>
+        </div>
+
+        <div class="gig" onclick="window.open('https://www.facebook.com/events/1611071800225831/', '_blank')">
+          <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-date">Sun, 3 May 2026</div>
+          </div>
+          <div class="gig-info">
+            <div class="gig-text"><strong>Gray's Inn</strong> – Aberdeen</div>
+          </div>
+        </div>
+
+      </div>
+      <p class="more-gigs">For bookings, head to the <a href="#contact" id="contactLink">contact section</a>.</p>
+    </div>
+  </section>
+  <section class="page">
+    <div class="accentred">
+      <div class="container">
+        <h1>Set List Favourites</h1>
+        <p class="section-intro">Fitliken play a wide range of songs from classic rock anthems through to modern crowd
+          favourites</p>
+        <div class="grid">
+          <p class="setlisttext">AC/DC</p>
+          <p class="setlisttext">Foo Fighters</p>
+          <p class="setlisttext">Thin Lizzy</p>
+          <p class="setlisttext">Green Day</p>
+          <p class="setlisttext">Metallica</p>
+          <p class="setlisttext">The Darkness</p>
+          <p class="setlisttext">Guns N' Roses</p>
+          <p class="setlisttext">Bon Jovi</p>
+          <p class="setlisttext">Gun</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div>
+      <div class="grid">
+
+        <div class="thumb">
+          <a href="images/photos/full/fitliken-live-in-sandend-2023.jpg" class="glightbox" data-gallery="fitliken"
+            data-title="Fitliken live in Sandend 2023" aria-label="Fitliken live in Sandend 2023">
+            <img src="images/photos/thumb/fitliken-live-in-sandend-2023.jpg" alt="Fitliken live in Sandend 2023"
+              loading="lazy" />
+          </a>
+        </div>
+
+        <div class="thumb">
+          <a href="images/photos/full/ali-singer-with-the-band-fitliken.jpg" class="glightbox" data-gallery="fitliken"
+            data-title="Ali – vocals" aria-label="Ali, singer with the band Fitliken">
+            <img src="images/photos/thumb/ali-singer-with-the-band-fitliken.jpg"
+              alt="Ali, singer with the band Fitliken" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="thumb">
+          <a href="images/photos/full/chris-guitarist-with-the-band-fitliken.jpg" class="glightbox"
+            data-gallery="fitliken" data-title="Chris – guitar" arial-label="Chris, guitarist with the band Fitliken">
+            <img src="images/photos/thumb/chris-guitarist-with-the-band-fitliken.jpg"
+              alt="Chris, guitarist with the band Fitliken" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="thumb">
+          <a href="images/photos/full/david-bassist-with-the-band-fitliken.jpg" class="glightbox"
+            data-gallery="fitliken" data-title="David – bass" aria-label="David, bassist with the band Fitliken">
+            <img src="images/photos/thumb/david-bassist-with-the-band-fitliken.jpg"
+              alt="David, bassist with the band Fitliken" loading="lazy" />
+          </a>
+        </div>
+
+        <div class="thumb">
+          <a href="images/photos/full/the-current-fitliken-lineup-2026.jpg" class="glightbox" data-gallery="fitliken"
+            data-title="Fitliken lineup 2026" aria-label="The current 2026 Fitliken lineup">
+            <img src="images/photos/thumb/the-current-fitliken-lineup-2026.jpg" alt="The current 2026 Fitliken lineup"
+              loading="lazy" />
+          </a>
+        </div>
+
+        <div class="thumb">
+          <a href="images/photos/full/fitliken-playing-live-sandend-2025.jpg" class="glightbox" data-gallery="fitliken"
+            data-title="Fitliken playing live in Sandend 2025" aria-label="Fitliken playing live in Sandend 2025">
+            <img src="images/photos/thumb/fitliken-playing-live-sandend-2025.jpg"
+              alt="Fitliken playing live in Sandend 2025" loading="lazy" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="page">
+    <div class="container">
+      <div class="accentorange">
+        <h1>About the Band</h1>
+        <p>Fitliken are a high-energy classic rock covers band based in Aberdeen, built for busy dancefloors and packed
+          weekend venues.</p>
+        <p>Blending timeless rock anthems with modern favourites, the band deliver tight, engaging performances that
+          keep crowds involved from first song to last. Expect big choruses, sharp stops and memorable finishes — all
+          played with precision and purpose.</p>
+        <p>Fitliken pride themselves on reading the room. Whether it’s a lively Saturday night in a city-centre pub, a
+          harbour-side summer event, or a private function, the focus is always on the atmosphere — bringing the right
+          level of energy for the space.</p>
+        <p>With professional sound, an efficient setup and a growing reputation across the North-East, Fitliken offer a
+          reliable, polished live show that works for both venues and audiences alike.</p>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer role="contentinfo">
+    <section id="contact" class="page">
+      <div class="container">
+        <div class="accentred">
+          <h1>Contact Us</h1>
+          <p class="section-intro">Available for bookings across Aberdeen & Aberdeenshire. For bookings and enquiries
+            please email <a href="mailto:band&#64;fitliken.co.uk" id="emailLink">band&#64;fitliken.co.uk</a>.</p>
+          <div class="social">
+            <!-- Facebook -->
+            <a href="https://facebook.com/fitliken" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z" />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/fitliken" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+              </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://tiktok.com/@fitlikenband" target="_blank" aria-label="TikTok">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M15 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.5V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3a2 2 0 1 0 2 2V3h2z" />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/@Fitliken" target="_blank" aria-label="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23 7s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17 3.5 12 3.5 12 3.5h0s-5 0-8.1.2c-.4 0-1.3.1-2.1 1C1.2 5.4 1 7 1 7S.8 8.9.8 10.8v2.3c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1C6 20.5 12 20.5 12 20.5s5 0 8.1-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-2.3C23.2 8.9 23 7 23 7zM10 15V9l6 3-6 3z" />
+              </svg>
+            </a>
+
+          </div>
+          <p>All content &copy; Fitliken 2026.</p>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true
+    });
+  </script>
 </body>
 </html>
