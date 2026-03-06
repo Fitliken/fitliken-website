@@ -75,13 +75,15 @@ h1, h2, h3
 }
 
 .hero-tagline{
-  margin: 1rem 0 0; /* your previous margin-top line was invalid */
+  margin: 1rem auto 0;
   font-family: 'Anton', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: white;
   letter-spacing: 1px;
-  text-align: center;
+  text-align: center !important;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  width: min(520px, 90%);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.75);
 }
 
   .accentred {
@@ -528,11 +530,16 @@ a:hover
   }
 
   .hero-tagline{
-    font-size: clamp(0.95rem, 4.6vw, 1.2rem);
-    line-height: 1.15;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.5;
     letter-spacing: 0.5px;
-    max-width: 22ch;               /* stops it going too wide */
+  
+    max-width: 420px;
+    width: fit-content;
+  
     margin: 1rem auto 0;
-    text-wrap: balance;            /* modern browsers: nicer line breaks */
+    text-align: center;
+    text-wrap: balance;
+    border: 1px solid red;
   }
 }
