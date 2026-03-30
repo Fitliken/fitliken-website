@@ -88,17 +88,6 @@
     border: 0;
   }
 
-  @media (max-width: 768px) {
-    .gig-layout {
-      flex-direction: column;
-    }
-
-    .gig-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-  }
-
   .gig-poster {
     width: 100%;
     max-width: 400px;
@@ -119,4 +108,20 @@
     border: 1px solid rgba(255,255,255,0.9);
     background: #1877f2;
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+
+    .hero-tagline {
+      margin-top: 1rem;
+    }
+
+    .gig-layout {
+      flex-direction: column;
+    }
+
+    .gig-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
   }
