@@ -223,6 +223,18 @@
       const id = shell?.dataset?.videoId;
       if (!id) return;
 
+      if(shell.dataset.played) return;
+      shell.dataset.playerd = "true";
+
+      // 🔥 GA4 event
+      gtag('event', 'video_play', {
+        page_type: 'homepage',
+        location: 'video_section',
+        video_type: 'youtube_embed',
+        video_id: id,
+        transport_type: 'beacon'
+      });
+
       shell.innerHTML = `
             <iframe
               src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
@@ -247,9 +259,9 @@
             <h1><img src="images/logo.webp" class="hero-logo" alt="Fitliken - High-energy rock covers across Aberdeen & Aberdeenshire"></h1>
             <p class="hero-tagline">High-energy rock covers across Aberdeen & Aberdeenshire</p>
             <div class="hero-cta">
-              <a href="#video" class="btn btn-video">Watch Video</a>
-              <a href="#contact" class="btn btn-solid">Book Us</a>
-              <a href="#gigs" class="btn btn-outline">Next Gigs</a>
+              <a href="#video" class="btn btn-video" onclick="gtag('event', 'video_button_click', {page_type: 'homepage',location: 'hero_section',video_type: 'homepage_watch_video',transport_type: 'beacon'});">Watch Video</a>
+              <a href="#contact" class="btn btn-solid" onclick="trackEvent('booking_event', {type: 'book_now_button',location: 'hero_section',page_type: 'homepage'});">Book Us</a>
+              <a href="#gigs" class="btn btn-outline" onclick="gtag('event', 'next_gigs_click', {page_type: 'homepage',location: 'hero_section',transport_type: 'beacon'});">Next Gigs</a>
             </div>
           </div>
         </div>
