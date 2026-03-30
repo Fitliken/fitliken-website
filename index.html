@@ -53,116 +53,7 @@
         "name": "Aberdeen & Aberdeenshire, Scotland"
       }
     }
-    </script>
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Fitliken Upcoming Gigs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "MusicEvent",
-              "name": "Fitliken live at The New Greentrees",
-              "startDate": "2026-04-11T21:00:00+01:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "The New Greentrees",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Dyce",
-                  "addressRegion": "Scotland",
-                  "addressCountry": "GB"
-                }
-              },
-              "performer": {
-                "@id": "https://fitliken.co.uk/#band"
-              },
-              "url": "https://www.facebook.com/events/1488272322717571/"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "MusicEvent",
-              "name": "Fitliken live at O'Donoghues",
-              "startDate": "2026-04-18T23:00:00+01:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "O'Donoghues",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Aberdeen",
-                  "addressRegion": "Scotland",
-                  "addressCountry": "GB"
-                }
-              },
-              "performer": {
-                "@id": "https://fitliken.co.uk/#band"
-              },
-              "url": "https://www.facebook.com/events/916202884157015/"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "MusicEvent",
-              "name": "Fitliken live at Gray's Inn",
-              "startDate": "2026-05-03T16:00:00+01:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "Gray's Inn",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Aberdeen",
-                  "addressRegion": "Scotland",
-                  "addressCountry": "GB"
-                }
-              },
-              "performer": {
-                "@id": "https://fitliken.co.uk/#band"
-              },
-              "url": "https://www.facebook.com/events/1611071800225831/"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "MusicEvent",
-              "name": "Fitliken live at a Private Party",
-              "startDate": "2026-05-23T12:00:00+01:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": {
-                "@type": "Place",
-                "name": "Private Party",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Aberdeenshire",
-                  "addressRegion": "Scotland",
-                  "addressCountry": "GB"
-                }
-              },
-              "performer": {
-                "@id": "https://fitliken.co.uk/#band"
-              },
-              "url": "https://www.facebook.com/events/1664037061446199/"
-            }
-          }
-        ]
-      }
-      </script>
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ED1C7PGFL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -225,6 +116,8 @@
 
       if(shell.dataset.played) return;
       shell.dataset.playerd = "true";
+
+      console.log("video clicked", id);
 
       // 🔥 GA4 event
       gtag('event', 'video_play', {
