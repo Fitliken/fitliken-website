@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Fitliken Live at The New Greentrees
+DTSTART:20260411T200000Z
+DTEND:20260411T230000Z
+LOCATION:The New Greentrees, Dyce, AB21 7AA
+DESCRIPTION:Fitliken live – high-energy rock covers from AC/DC to Foo Fighters.
+END:VEVENT
+END:VCALENDAR
