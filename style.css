@@ -558,4 +558,8 @@ a:hover
   .hero-logo {
     width: clamp(200px, 40vw, 500px);
   }
+
+  .hero-taglin {
+    margin-top: 1rem;
+  }
 }
