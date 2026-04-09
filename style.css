@@ -133,13 +133,30 @@ h1, h2, h3
   .grid
   {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     text-align: center;
   }
 
   .grid div:hover {
     transform: translateY(-3px);
+  }
+
+  .set-grid
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .set-grid > * {
+    min-width: 0;
+  }
+
+  .set-grid iframe {
+    width: 100%;
+    max-width: 100%;
+    display: block;
   }
 
   .gig {
@@ -273,6 +290,7 @@ h1, h2, h3
     white-space: nowrap;
     line-height: 1;
     height: 12px;
+    min-width: 170px;
   }
 
   .setlisttext
@@ -525,7 +543,34 @@ a:hover
   border-bottom: 12px solid transparent;
 }
 
-@media (max-width: 600px) {
+.soundcloud-player {
+  width: 90%;
+}
+
+li {
+  text-align: left;
+  line-height: 2em;
+}
+
+.padded {
+  padding: 10px;
+}
+
+.poster-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.poster-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.4), transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
 
   body {
     font-size: 10pt;
@@ -533,6 +578,10 @@ a:hover
 
   h1 {
     font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
   }
 
   .hero-buttons {
@@ -543,8 +592,26 @@ a:hover
     padding: 12px 20px;
   }
 
-  .grid {
+  .set-grid {
     grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .set-grid p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .set-grid ul {
+    padding-left: 54px;
+  }
+
+  .set-grid li {
+    margin-bottom: 4px;
+  }
+
+  .soundcloud-player {
+    margin-top: 10px;
   }
 
   p {
@@ -552,14 +619,14 @@ a:hover
   }
 
   .hero{
-    min-height: 70vh;              /* gives the text room */
+    min-height: 70vh;
   }
 
   .hero-logo {
     width: clamp(200px, 40vw, 500px);
   }
 
-  .hero-taglin {
+  .hero-tagline {
     margin-top: 1rem;
   }
 }
