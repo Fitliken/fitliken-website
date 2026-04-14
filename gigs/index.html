@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitliken | Upcoming gigs in Aberdeen & Aberdeenshire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upcoming Fitliken gigs in Aberdeen and Aberdeenshire">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="robots" content="index, follow">
+  <meta property="og:site_name" content="Fitliken">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fitliken | Upcoming gigs in Aberdeen & Aberdeenshire">
+  <meta name="twitter:description" content="Upcoming Fitliken gigs in Aberdeen and Aberdeenshire">
+  <meta name="twitter:image" content="https://fitliken.co.uk/images/hero.webp">
+  <meta property="og:title" content="Fitliken | Upcoming gigs in Aberdeen & Aberdeenshire">
+  <meta property="og:description" content="Upcoming Fitliken gigs in Aberdeen and Aberdeenshire">
+  <meta property="og:image" content="https://fitliken.co.uk/images/hero.webp">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="795">
+  <meta property="og:url" content="https://fitliken.co.uk">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="https://fitliken.co.uk/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://fitliken.co.uk/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://fitliken.co.uk/images/apple-touch-icon.png">
+  <link rel="canonical" href="https://fitliken.co.uk/gigs/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/all-gigs.css">
+  <script type="text/javascript">
+        const btn = document.getElementById("gigEnquiryBtn");
+        if (btn) {
+        btn.addEventListener("click", function () {
+            trackEvent("booking_event", {
+            type: "gig_enquiry_button",
+            location: "gig_page",
+            page_type: "gig_page",
+            event_page: "2026-06-06-cuminestown-mcc-rock-night"
+            });
+        });
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "@id": "https://fitliken.co.uk/#band",
+        "name": "Fitliken",
+        "genre": ["Rock", "Classic Rock", "Cover band"],
+        "url": "https://fitliken.co.uk/",
+        "sameAs": [
+        "https://facebook.com/fitliken",
+        "https://instagram.com/fitliken",
+        "https://tiktok.com/@fitlikenband",
+        "https://youtube.com/@Fitliken"
+        ],
+        "areaServed": {
+        "@type": "Place",
+        "name": "Aberdeen & Aberdeenshire, Scotland"
+        }
+    }
+    </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ED1C7PGFL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6ED1C7PGFL', {
+      anonymize_ip: true
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.location.hash) return;
+
+        const gigs = Array.from(document.querySelectorAll(".gig-item[data-date]"));
+
+        // Use today's date at local midnight
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+
+        let nextGig = null;
+
+        for (const gig of gigs) {
+            const rawDate = gig.dataset.date;
+            const gigDate = new Date(rawDate + "T00:00:00");
+            if (gigDate >= now) {
+                nextGig = gig;
+                break;
+            } else {
+                gig.classList.add("past-gig");
+            }
+        }
+
+        // Fallback: if all gigs are in the past, go to the last month with gigs
+        if (!nextGig && gigs.length > 0) {
+            nextGig = gigs[gigs.length - 1];
+        }
+
+        if (!nextGig) return;
+
+        // Highlight the next gig row
+        nextGig.classList.add("next-gig");
+
+        // Find the month heading before this gig list
+        const monthHeading = nextGig.closest("ul")?.previousElementSibling;
+
+        if (monthHeading) {
+            monthHeading.classList.add("current-month");
+            monthHeading.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+            });
+        }
+    
+        console.log("DOM loaded");
+
+        const imgEl = document.getElementById("gig-image");
+        const captionEl = document.getElementById("gig-image-caption");
+
+        console.log("imgEl:", imgEl);
+        console.log("captionEl:", captionEl);
+
+        if (!imgEl) {
+            console.error("gig-image not found");
+            return;
+        }
+
+        let images = [];
+        let lastIndex = -1;
+
+        fetch("/gigs/gallery.json")
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log("JSON loaded:", data);
+
+            images = data;
+
+            if (!Array.isArray(images) || images.length === 0) {
+                console.error("gallery.json is empty or invalid");
+                return;
+            }
+
+            initObserver();
+        })
+        .catch(err => console.error("Failed to load gallery.json", err));
+
+        function getRandomImage() {
+            let nextIndex;
+
+            do {
+                nextIndex = Math.floor(Math.random() * images.length);
+            } while (images.length > 1 && nextIndex === lastIndex);
+
+            lastIndex = nextIndex;
+            return images[nextIndex];
+        }
+
+        function swapImage() {
+            const next = getRandomImage();
+            console.log("swapImage next:", next);
+
+            if (!next || !next.url) {
+                console.error("Invalid image object:", next);
+                return;
+            }
+
+            imgEl.style.opacity = 0;
+            if (captionEl) captionEl.style.opacity = 0;
+
+            setTimeout(() => {
+                console.log("Loading image:", next.url);
+                imgEl.src = next.url;
+                imgEl.alt = next.caption || "Fitliken live photo";
+
+                if (captionEl) {
+                    captionEl.textContent = next.caption || "";
+                    captionEl.style.opacity = 1;
+                }
+
+                imgEl.style.opacity = 1;
+            }, 200);
+        }
+
+        let currentQuarter = null;
+
+        function getQuarter(el) {
+            if (el.classList.contains("q1")) return "q1";
+            if (el.classList.contains("q2")) return "q2";
+            if (el.classList.contains("q3")) return "q3";
+            if (el.classList.contains("q4")) return "q4";
+            return null;
+        }
+
+        function initObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+
+                    const quarter = getQuarter(entry.target);
+
+                    if (!quarter || quarter === currentQuarter) return;
+
+                    console.log("Quarter change:", currentQuarter, "→", quarter);
+
+                    currentQuarter = quarter;
+                    swapImage();
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            document.querySelectorAll(".gig-month").forEach(h => observer.observe(h));
+        }
+    });
+
+  </script>
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <div role="banner">
+                <img src="/images/hero.webp" alt="Fitliken live in Aberdeen" class="hero-img">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="hero-inner">
+                    <img src="/images/logo.webp" class="hero-logo" alt="Fitliken - High-energy rock covers across Aberdeen & Aberdeenshire">
+                    <p class="hero-tagline">High-energy rock covers across Aberdeen & Aberdeenshire</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gig-page">
+            <div>
+                <h1>All Fitliken Gigs</h1>
+                <h2>2026</h2>
+                <h3 id="jan" class="gig-month q1">January</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-01-23"><span class="gig-date">23</span>Butchers Arms, Inverurie</li>
+                    <li class="gig-item" data-date="2026-01-31"><span class="gig-date">31</span>Smiddy Bar, Daviot</li>
+                </ul>
+                <h3 id="feb" class="gig-month q1">February</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-02-07"><span class="gig-date">7</span>Private Event, Stonehaven</li>
+                </ul>            
+                <h3 id="mar" class="gig-month q1">March</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-03-28"><span class="gig-date">28</span>Balaclava Bar, Fraserburgh</li>
+                </ul>
+                <h3 id="apr" class="gig-month q2">April</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-04-11"><span class="gig-date">11</span><a href="/gigs/the-new-greentrees-dyce-2026-04-11" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_apr', event_page: 'the-new-greentrees-dyce-2026-04-11', transport_type: 'beacon'});">New Greentrees, Dyce</a></li>
+                    <li class="gig-item next-gig-venue" data-date="2026-04-18"><span class="gig-date next-gig">18</span><a href="/gigs/odonoghues-aberdeen-2026-04-18" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_apr', event_page: 'odonoghues-aberdeen-2026-04-18', transport_type: 'beacon'});">O'Donoghues, Aberdeen</a></li>
+                </ul>
+                <h3 id="may" class="gig-month q2">May</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-05-03"><span class="gig-date">3</span><a href="/gigs/grays-inn-aberdeen-2026-05-03/" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_may', event_page: 'grays-inn-aberdeen-2026-05-03/', transport_type: 'beacon'});">Gray's Inn, Aberdeen</a></li>
+                    <li class="gig-item" data-date="2026-05-23"><span class="gig-date">23</span><a href="/gigs/private-party-aberdeen-2026-05-23/" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_may', event_page: 'private-party-aberdeen-2026-05-23', transport_type: 'beacon'});">Private Event, Daviot</a></li>
+                </ul>
+                <h3 id="jun" class="gig-month q2">June</h3>
+                <ul>
+                    <li class="gig-item" data-date="2026-06-06"><span class="gig-date">6</span><a href="/gigs/2026-06-06-cuminestown-mcc-rock-night/" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_jun', event_page: '2026-06-06-cuminestown-mcc-rock-night', transport_type: 'beacon'});">Cuminestown MCC Rock Night, Turriff</a></li>
+                    <li class="gig-item"><span class="gig-date">27</span>Private Event, Buckie</li>
+                </ul>
+                <h3 id="jul" class="gig-month q3">July</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">4</span>Balaclava Bar, Fraserburgh</li>
+                    <li class="gig-item"><span class="gig-date">11</span>Harbour Lights, Peterhead</li>
+                </ul>
+                <h3 id="aug" class="gig-month q3">August</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">1</span>Sandend, Aberdeenshire</li>
+                    <li class="gig-item"><span class="gig-date">8</span>O'Donoghues, Aberdeen</li>
+                    <li class="gig-item"><span class="gig-date">29</span>Balaclava Bar, Fraserburgh</li>
+                </ul>
+                <h3 id="sep" class="gig-month q3">September</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">12</span>Black Bull, Inverurie</li>
+                    <li class="gig-item"><span class="gig-date">26</span>Gray's Inn, Aberdeen</li>
+                </ul>
+                <h3 id="oct" class="gig-month q4">October</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">3</span>The Kastille, Turriff</li>
+                    <li class="gig-item"><span class="gig-date">24</span>New Greentrees, Dyce</li>
+                    <li class="gig-item"><span class="gig-date">30</span>Butchers Arms, Inverurie</li>
+                    <li class="gig-item"><span class="gig-date">31</span>Football Social Club, Maud</li>
+                </ul>
+                <h3 id="nov" class="gig-month q4">November</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">7</span>The Leathen, Portlethen</li>
+                    <li class="gig-item"><span class="gig-date">28</span>Burnett Arms, Banchory</li>
+                </ul>
+                <h3 id="dec" class="gig-month q4">December</h3>
+                <ul>
+                    <li class="gig-item"><span class="gig-date">19</span>Burnett Arms, Banchory</li>
+                </ul>
+            </div>
+            <div>
+                <div class="gigs-image-sticky">
+                    <img src="/images/photos/full/fitliken-live-in-sandend-2023.jpg" alt="Fitliken live in Sandend, 2023" id="gig-image" />
+                    <p id="gig-image-caption">Fitliken live in Sandend, 2023</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="contact" class="page">
+        <div class="container">
+            <div class="accentred">
+            <h2>Contact Us</h2>
+            <p class="section-intro">Available for bookings across Aberdeen & Aberdeenshire. For bookings and enquiries
+                please email <a href="mailto:band&#64;fitliken.co.uk" id="emailLink">band&#64;fitliken.co.uk</a>.</p>
+            <div class="social">
+                <!-- Facebook -->
+                <a href="https://facebook.com/fitliken" target="_blank" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z" />
+                </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/fitliken" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@fitlikenband" target="_blank" aria-label="TikTok">
+                <svg viewBox="0 0 24 24">
+                    <path
+                    d="M15 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.5V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3a2 2 0 1 0 2 2V3h2z" />
+                </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com/@Fitliken" target="_blank" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path
+                    d="M23 7s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17 3.5 12 3.5 12 3.5h0s-5 0-8.1.2c-.4 0-1.3.1-2.1 1C1.2 5.4 1 7 1 7S.8 8.9.8 10.8v2.3c0 1.9.2 3.8.2 3.8s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1C6 20.5 12 20.5 12 20.5s5 0 8.1-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-2.3C23.2 8.9 23 7 23 7zM10 15V9l6 3-6 3z" />
+                </svg>
+                </a>
+
+            </div>
+            <p>All content &copy; Fitliken 2026.</p>
+            </div>
+        </div>
+        </section>
+    </footer>
+</body>
+</html>
