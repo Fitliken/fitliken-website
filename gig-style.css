@@ -68,16 +68,14 @@
   }
 
   .gig-pagination {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
-    width: 100%;
   }
   
   .gig-pagination .btn {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 250px;
@@ -115,7 +113,7 @@
     color: #fff;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
 
     .hero-tagline {
       margin-top: 1rem;
@@ -128,5 +126,32 @@
     .gig-buttons {
         flex-direction: column;
         align-items: center;
-      }
+    }
+
+    .gig-media {
+      width: 100%;
+    }
+
+    .gig-pagination {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gig-pagination .btn {
+      display: flex;
+      position: static;
+      width: 100%;
+      max-width: 340px;
+      min-width: 0;
+      margin: 0;
+      padding: 0.9rem 1.4rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
   }

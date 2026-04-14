@@ -3,21 +3,26 @@
   <url>
     <loc>https://fitliken.co.uk/</loc>
     <priority>1.0</priority>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-14</lastmod>
+  </url>
+  <url>
+    <loc>https://fitliken.co.uk/gigs/</loc>
+    <priority>0.9</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
   <url>
     <loc>https://fitliken.co.uk/gigs/odonoghues-aberdeen-2026-04-18/</loc>
-    <priority>0.9</priority>
-    <lastmod>2026-03-30</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
   <url>
     <loc>https://fitliken.co.uk/gigs/grays-inn-aberdeen-2026-05-03/</loc>
-    <priority>0.8</priority>
-    <lastmod>2026-03-30</lastmod>
+    <priority>0.7</priority>
+    <lastmod>2026-04-14</lastmod>
   </url>
   <url>
     <loc>https://fitliken.co.uk/gigs/turriff-legion-2026-06-06/</loc>
     <priority>0.7</priority>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
   </url>
 </urlset>
