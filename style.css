@@ -126,8 +126,8 @@ h1, h2, h3
   {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
     text-align: center;
+    row-gap: 20px;
   }
 
   .grid
@@ -161,16 +161,25 @@ h1, h2, h3
 
   .gig {
     display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 1rem;
+    grid-template-rows: 1fr;
     min-height: 100px;
-    padding: 20px 20px 18px;
-    padding-bottom: 22px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     display: block;
     text-decoration: none;
-    color: inherit;
+    color: #000;
+    background: #333;
+    box-shadow: 5px 5px 10px, rgba(0, 0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 200px;
+  }
+
+  .gig.next {
+    transform: scale(1.05);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .gig a:visited {
+    color: #ddd;
   }
 
   .gig * {
@@ -180,9 +189,7 @@ h1, h2, h3
 
   .gig:hover {
     transform: translateY(-4px);
-    box-shadow:
-      0 10px 25px rgba(0,0,0,0.35),
-      0 0 20px rgba(255,255,255,0.1);
+    box-shadow: 2px 2px 20px  rgba(0, 0, 0, 0, 0.08);
   }
 
   .gig.next-show {
@@ -205,13 +212,12 @@ h1, h2, h3
   .gig-top-row {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.65rem;
+    align-items: center;
   }
   
   .gig-date {
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight:normal;
+    font-size: 0.8rem;
   }
   
   .gig-info {
@@ -237,9 +243,15 @@ h1, h2, h3
     transform: translateY(0px);
   }
   
-  .gig-text {
+  .gig-venue, .gig-location {
     line-height: 1.35;
+    color: #fff;
     flex: 1;
+  }
+
+  .gig-venue {
+    font-weight: 700;
+    font-size: 1.1rem;
   }
   
   .gig-event {
@@ -275,6 +287,7 @@ h1, h2, h3
     white-space: nowrap;
     line-height: 1;
     height: 12px;
+    margin-bottom: 15px;
   }
 
   .next-no-show-badge {
@@ -291,6 +304,7 @@ h1, h2, h3
     line-height: 1;
     height: 12px;
     min-width: 170px;
+    margin-bottom: 15px;
   }
 
   .setlisttext
@@ -298,6 +312,16 @@ h1, h2, h3
     text-align: center;
     font-weight: bold;
     font-size: 14pt;
+  }
+
+  .setlist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px 24px;
+  }
+
+  .setlist-grid p {
+    text-align: center;
   }
 
   .video-wrapper {
@@ -452,11 +476,6 @@ a:hover
   margin: 0 auto 14px;
 }
 
-.gig-date {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
 .gig-info {
   margin-top: 6px;
   opacity: 0.9;
@@ -570,6 +589,56 @@ li {
   z-index: -1;
 }
 
+.review-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.review {
+  background: #ddd;
+  border-radius: 15px;
+  margin: 10px 10px 10px 0px;
+  box-shadow: 2px 2px 5px #c0c0c0;
+  padding: 10px;
+  text-align: left;
+  color: #000;
+  cursor: pointer;
+  max-width: 350px;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review:hover {
+  background: #eee;
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 10px #c0c0c0;
+}
+
+.review p {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+.review p.attrib {
+  width: 100%;
+  text-align: right;
+  font-style: italic;
+}
+
+.review-star {
+  width: 20px;
+  margin: -3px;
+}
+
+.section-cta {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
 @media (max-width: 768px) {
 
   body {
@@ -629,4 +698,11 @@ li {
   .hero-tagline {
     margin-top: 1rem;
   }
+
+  .review-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
 }

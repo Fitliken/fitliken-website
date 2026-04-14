@@ -176,54 +176,82 @@
         </div>
       </div>
     </section>
+    <section class="page" aria-label="Reviews" id="reviews">
+      <div class="accentred">
+        <div class="reviews">
+          <h2>Reviews</h2>
+          <div class="review-cards">
+            <div class="review" onclick="window.open('https://maps.app.goo.gl/Fbme9LWpVwZyVHPeA');">
+              <div class="review-headline">
+                <p>
+                  <img src="/images/reviews/star.png" alt="star" class="review-star" />
+                  <img src="/images/reviews/star.png" alt="star" class="review-star" />
+                  <img src="/images/reviews/star.png" alt="star" class="review-star" />
+                  <img src="/images/reviews/star.png" alt="star" class="review-star" />
+                  <img src="/images/reviews/star.png" alt="star" class="review-star" />
+                  &nbsp; 13 Apr 2026
+                </p>
+                <p>"Would 100% recommend these guys... looking forward to there return on October 24th."</p>
+                <p class="attrib">Stephen Cruickshank - The New Greentrees</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="section-cta">Been to a gig? Leave us a review on either <a href="https://g.page/r/CUHr6VxOQgBSEAI/review" target="_blank">Google</a> or <a href="https://www.facebook.com/fitliken/reviews" target="_blank">Facebook</a>.</p>
+    </section>
     <section class="page" aria-label="Upcoming gigs" id="gigs">
-      <div class="container">
+      <div class="accentorange">
         <h2>Upcoming Gigs</h2>
         <p class="section-intro">
           Fitliken perform across Aberdeen and Aberdeenshire—pubs, clubs, rallies and private events.
         </p>
         <div class="gigs-grid" id="gigs-grid-container">
 
-          <a class="gig" href="/gigs/odonoghues-aberdeen-2026-04-18/" onclick="gtag('event', 'gig_page_click', {page_type: 'homepage', location: 'upcoming_gigs', event_page: 'odonoghues-aberdeen-2026-04-18', transport_type: 'beacon'});">
-            <div class="gig-top-row"><span class="next-no-show-badge"></span>
+          <a class="gig next" href="/gigs/odonoghues-aberdeen-2026-04-18/" onclick="gtag('event', 'gig_page_click', {page_type: 'homepage', location: 'upcoming_gigs', event_page: 'odonoghues-aberdeen-2026-04-18', transport_type: 'beacon'});">
+            <div class="gig-top-row">
               <span class="next-show-badge">NEXT SHOW</span>
               <div class="gig-date">Sat, 18 April 2026</div>
             </div>
             <div class="gig-info">
-              <div class="gig-text"><strong>O'Donoghues</strong> – Aberdeen</div>
+              <div class="gig-venue"><strong>O'Donoghues</strong></div>
+              <div class="gig-location">Aberdeen</div>
             </div>
           </a>
 
           <a class="gig" href="/gigs/grays-inn-aberdeen-2026-05-03/" onclick="gtag('event', 'gig_page_click', {page_type: 'homepage', location: 'upcoming_gigs', event_page: 'grays-inn-aberdeen-2026-05-03', transport_type: 'beacon'});">
-            <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-top-row">
+              <span class="next-no-show-badge">&nbsp;</span>
               <div class="gig-date">Sun, 3 May 2026</div>
             </div>
             <div class="gig-info">
-              <div class="gig-text"><strong>Gray's Inn</strong> – Aberdeen</div>
+              <div class="gig-text"><strong>Gray's Inn</strong><br />Aberdeen</div>
             </div>
           </a>
 
           <a class="gig" href="/gigs/private-party-aberdeen-2026-05-23/" onclick="gtag('event', 'gig_page_click', {page_type: 'homepage', location: 'upcoming_gigs', event_page: 'private-party-aberdeen-2026-05-23', transport_type: 'beacon'});">
-            <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-top-row">
+              <span class="next-no-show-badge"></span>
               <div class="gig-date">Sat, 23 May 2026</div>
             </div>
             <div class="gig-info">
-              <div class="gig-text"><strong>Private Party</strong> – Aberdeen</div>
+              <div class="gig-text"><strong>Private Party</strong><br />Aberdeen</div>
             </div>
           </a>
 
           <a class="gig" href="/gigs/2026-06-06-cuminestown-mcc-rock-night/" onclick="gtag('event', 'gig_page_click', {page_type: 'homepage', location: 'upcoming_gigs', event_page: '2026-06-06-cuminestown-mcc-rock-night', transport_type: 'beacon'});">
-            <div class="gig-top-row"><span class="next-no-show-badge"></span>
+            <div class="gig-top-row">
+              <span class="next-no-show-badge"></span>
               <div class="gig-date">Sat, 6 June 2026</div>
             </div>
             <div class="gig-info">
-              <div class="gig-text"><strong>Cuminestown M.C.C. Rock Night</strong> – Turriff</div>
+              <div class="gig-text"><strong>Cuminestown M.C.C.</strong><br />Turriff</div>
             </div>
           </a>
 
         </div>
-        <p class="more-gigs">For bookings, head to the <a href="#contact" id="contactLink">contact section</a>.</p>
       </div>
+      <p class="section-cta">Want to book Fitliken? <a href="#contact" id="contactLink">Get in touch</a> &rarr;</p>
     </section>
     <section class="page">
       <div class="accentred">
@@ -232,16 +260,17 @@
           <div class="set-grid">
               <div class="padded">
                 <p>Our setlist is bursting with classic rock anthems through to modern crowd favourites from:</p>
-                <ul>
-                  <li>AC/DC</li>
-                  <li><strong>Thin Lizzy</strong></li>
-                  <li>Foo Fighters</li>
-                  <li>Green Day</li>
-                  <li><strong>Gun</strong></li>
-                  <li>Metallica</li>
-                  <li>Guns N' Roses</li>
-                  <li>Bon Jovi</li>
-                </ul>
+                <div class="setlist-grid">
+                  <p>AC/DC</p>
+                  <p>Bon Jovi</p>
+                  <p>Foo Fighters</p>
+                  <p>Green Day</p>
+                  <p><strong>Gun</strong></p>
+                  <p>Guns N' Roses</p>
+                  <p>Metallica</p>
+                  <p>Queen</p>
+                  <p><strong>Thin Lizzy</strong></p>
+                </div>
               </div>
               <div class="padded">
                 <p>A sample of our straight-up no-nonsense rock 'n' roll - hit play:</p>
