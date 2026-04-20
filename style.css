@@ -711,6 +711,10 @@ li {
     box-sizing: border-box;
   }
 
+  .review p {
+    text-align: left;
+  }
+
   .soundcloud-player {
     margin-top: 10px;
   }
