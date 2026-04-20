@@ -9,7 +9,8 @@ html
 body
 {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .section
@@ -114,12 +115,12 @@ h1, h2, h3
     margin: 25px 0px;
     padding: 25px 0px;
     border-top: 3px solid #a34400;
-    background: linear-gradient {
+    background: linear-gradient(
       180deg,
       #a34400 0%,
       #012200 50%,
       #0f0f0f 100%
-    }
+    );
   }
 
   .gigs-grid
@@ -342,6 +343,12 @@ h1, h2, h3
     border-radius: 12px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
+
+  .caption
+  {
+    margin: 5px 0 0 5px;
+    font-weight: bold;
+  }
   
   .thumb img{
     width: 100%;
@@ -363,12 +370,16 @@ h1, h2, h3
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   }
 
+
+.about {
+  padding: 0 50px;
+}
+
 p
 {
   line-height: 1.5em;
-  width: 95%;
-  text-align: justify;
-  margin: 25px;
+  text-align: left;
+  margin: 25px 0;
 }
 
 .social {
@@ -466,6 +477,7 @@ a:hover
   max-width: 70ch;
   margin: 0 auto 30px;
   opacity: 0.85;
+  text-align: center;
 }
 
 .gig {
@@ -591,40 +603,54 @@ li {
 
 .review-cards {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   justify-items: center;
+  margin-bottom: 50px;
 }
 
 .review {
-  background: #ddd;
+  background: #1a1a1a;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin: 10px 10px 10px 0px;
-  box-shadow: 2px 2px 5px #c0c0c0;
+  box-shadow: 0px 0px 4px #c3c3c3;
   padding: 10px;
   text-align: left;
-  color: #000;
   cursor: pointer;
-  max-width: 350px;
-  width: 100%;
+  max-width: 400px;
+  max-height: 300px;
+  overflow: scroll;
+  margin: 0 auto;
+  color: #c0c0c0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 10pt;
+}
+
+.review-headline {
+  font-size: 12pt;
 }
 
 .review:hover {
-  background: #eee;
+  background: #2a2a2a;
   transform: translateY(-3px);
-  box-shadow: 2px 2px 10px #c0c0c0;
+  box-shadow: 0px 0px 6px #c0c0c0;
 }
 
 .review p {
+  color: #fff;
   margin: 0;
   margin-top: 5px;
-  font-size: 0.8em;
+  font-size: 1.1em;
   line-height: 1.5;
 }
 
-.review p.attrib {
-  width: 100%;
-  text-align: right;
+.review p.review-name {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.review p.review-context {
+  font-size: 0.8em;
   font-style: italic;
 }
 
@@ -633,13 +659,24 @@ li {
   margin: -3px;
 }
 
+.review-thumb {
+  width: 25px;
+  margin: -3px;
+  margin-left: 5px;
+}
+
 .section-cta {
   text-align: center;
   max-width: 700px;
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   body {
     font-size: 10pt;
@@ -679,12 +716,37 @@ li {
     margin-bottom: 4px;
   }
 
+  .review-cards {
+    grid-template-columns: 1fr;
+    justify-content: left;
+    gap: 16px;
+  }
+
+  .review {
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .review p {
+    text-align: left;
+  }
+
   .soundcloud-player {
     margin-top: 10px;
   }
 
+  div.about {
+    padding: 0 10px;
+  }
+
   p {
-    width: 85%;
+    width: 95%;
+  }
+
+  p.caption {
+    font-size: 0.7em;
   }
 
   .hero{
