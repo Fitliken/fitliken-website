@@ -599,21 +599,22 @@ li {
 .review-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
   justify-items: center;
   margin-bottom: 50px;
 }
 
 .review {
   background: #1a1a1a;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin: 10px 10px 10px 0px;
   box-shadow: 0px 0px 4px #c3c3c3;
   padding: 10px;
   text-align: left;
   color: #000;
   cursor: pointer;
-  max-width: 400px;
   width: 100%;
+  max-width: 400px;
   color: #c0c0c0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -658,7 +659,7 @@ li {
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   body {
     font-size: 10pt;
@@ -696,6 +697,18 @@ li {
 
   .set-grid li {
     margin-bottom: 4px;
+  }
+
+  .review-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .review {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .soundcloud-player {
