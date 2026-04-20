@@ -86,7 +86,7 @@
         for (const gig of gigs) {
             const rawDate = gig.dataset.date;
             const gigDate = new Date(rawDate + "T00:00:00");
-            if (gigDate >= now) {
+            if (gigDate > now) {
                 nextGig = gig;
                 break;
             } else {
@@ -103,6 +103,10 @@
 
         // Highlight the next gig row
         nextGig.classList.add("next-gig");
+        const venueEl = nextGig.querySelector(".gig-venue");
+        if (venueEl) {
+            venueEl.classList.add("next-gig-venue");
+        }
 
         // Find the month heading before this gig list
         const monthHeading = nextGig.closest("ul")?.previousElementSibling;
@@ -114,17 +118,11 @@
             block: "start"
             });
         }
-    
-        console.log("DOM loaded");
 
         const imgEl = document.getElementById("gig-image");
         const captionEl = document.getElementById("gig-image-caption");
 
-        console.log("imgEl:", imgEl);
-        console.log("captionEl:", captionEl);
-
         if (!imgEl) {
-            console.error("gig-image not found");
             return;
         }
 
@@ -136,12 +134,10 @@
             return res.json();
         })
         .then(data => {
-            console.log("JSON loaded:", data);
 
             images = data;
 
             if (!Array.isArray(images) || images.length === 0) {
-                console.error("gallery.json is empty or invalid");
                 return;
             }
 
@@ -162,10 +158,8 @@
 
         function swapImage() {
             const next = getRandomImage();
-            console.log("swapImage next:", next);
 
             if (!next || !next.url) {
-                console.error("Invalid image object:", next);
                 return;
             }
 
@@ -173,7 +167,6 @@
             if (captionEl) captionEl.style.opacity = 0;
 
             setTimeout(() => {
-                console.log("Loading image:", next.url);
                 imgEl.src = next.url;
                 imgEl.alt = next.caption || "Fitliken live photo";
 
@@ -204,8 +197,6 @@
                     const quarter = getQuarter(entry.target);
 
                     if (!quarter || quarter === currentQuarter) return;
-
-                    console.log("Quarter change:", currentQuarter, "→", quarter);
 
                     currentQuarter = quarter;
                     swapImage();
@@ -256,7 +247,7 @@
                 <h3 id="apr" class="gig-month q2">April</h3>
                 <ul>
                     <li class="gig-item" data-date="2026-04-11"><span class="gig-date">11</span><a href="/gigs/the-new-greentrees-dyce-2026-04-11" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_apr', event_page: 'the-new-greentrees-dyce-2026-04-11', transport_type: 'beacon'});">New Greentrees, Dyce</a></li>
-                    <li class="gig-item next-gig-venue" data-date="2026-04-18"><span class="gig-date next-gig">18</span><a href="/gigs/odonoghues-aberdeen-2026-04-18" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_apr', event_page: 'odonoghues-aberdeen-2026-04-18', transport_type: 'beacon'});">O'Donoghues, Aberdeen</a></li>
+                    <li class="gig-item next-gig-venue" data-date="2026-04-18"><span class="gig-date">18</span><a href="/gigs/odonoghues-aberdeen-2026-04-18" onclick="gtag('event', 'gig_page_click', {page_type: 'gigs-hub', location: 'gigs_list_apr', event_page: 'odonoghues-aberdeen-2026-04-18', transport_type: 'beacon'});">O'Donoghues, Aberdeen</a></li>
                 </ul>
                 <h3 id="may" class="gig-month q2">May</h3>
                 <ul>
