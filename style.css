@@ -616,12 +616,18 @@ li {
   box-shadow: 0px 0px 4px #c3c3c3;
   padding: 10px;
   text-align: left;
-  color: #000;
   cursor: pointer;
   max-width: 400px;
+  max-height: 300px;
+  overflow: scroll;
   margin: 0 auto;
   color: #c0c0c0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 10pt;
+}
+
+.review-headline {
+  font-size: 12pt;
 }
 
 .review:hover {
@@ -631,6 +637,7 @@ li {
 }
 
 .review p {
+  color: #fff;
   margin: 0;
   margin-top: 5px;
   font-size: 1.1em;
