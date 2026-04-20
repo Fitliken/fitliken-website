@@ -370,6 +370,11 @@ h1, h2, h3
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   }
 
+
+.about {
+  padding: 0 50px;
+}
+
 p
 {
   line-height: 1.5em;
@@ -727,6 +732,10 @@ li {
 
   p {
     width: 85%;
+  }
+
+  p.caption {
+    font-size: 0.9em;
   }
 
   .hero{
