@@ -713,6 +713,7 @@ li {
   }
 
   .review p {
+    width: 100%;
     text-align: left;
     background: red;
   }
