@@ -342,6 +342,12 @@ h1, h2, h3
     border-radius: 12px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
+
+  .caption
+  {
+    margin: 5px 0 0 5px;
+    font-weight: bold;
+  }
   
   .thumb img{
     width: 100%;
@@ -466,6 +472,7 @@ a:hover
   max-width: 70ch;
   margin: 0 auto 30px;
   opacity: 0.85;
+  text-align: center;
 }
 
 .gig {
@@ -591,46 +598,58 @@ li {
 
 .review-cards {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
+  margin-bottom: 50px;
 }
 
 .review {
-  background: #ddd;
+  background: #1a1a1a;
   border-radius: 15px;
   margin: 10px 10px 10px 0px;
-  box-shadow: 2px 2px 5px #c0c0c0;
+  box-shadow: 0px 0px 4px #c3c3c3;
   padding: 10px;
   text-align: left;
   color: #000;
   cursor: pointer;
-  max-width: 350px;
+  max-width: 400px;
   width: 100%;
+  color: #c0c0c0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .review:hover {
-  background: #eee;
+  background: #2a2a2a;
   transform: translateY(-3px);
-  box-shadow: 2px 2px 10px #c0c0c0;
+  box-shadow: 0px 0px 6px #c0c0c0;
 }
 
 .review p {
   margin: 0;
   margin-top: 5px;
-  font-size: 0.8em;
+  font-size: 1.1em;
   line-height: 1.5;
 }
 
-.review p.attrib {
-  width: 100%;
-  text-align: right;
+.review p.review-name {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.review p.review-context {
+  font-size: 0.8em;
   font-style: italic;
 }
 
 .review-star {
   width: 20px;
   margin: -3px;
+}
+
+.review-thumb {
+  width: 25px;
+  margin: -3px;
+  margin-left: 5px;
 }
 
 .section-cta {
