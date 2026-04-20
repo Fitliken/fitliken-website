@@ -701,6 +701,7 @@ li {
 
   .review-cards {
     grid-template-columns: 1fr;
+    justify-content: left;
     gap: 16px;
   }
 
