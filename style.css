@@ -714,6 +714,7 @@ li {
 
   .review p {
     text-align: left;
+    background: red;
   }
 
   .soundcloud-player {
