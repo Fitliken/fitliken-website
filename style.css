@@ -9,7 +9,8 @@ html
 body
 {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 .section
@@ -114,12 +115,12 @@ h1, h2, h3
     margin: 25px 0px;
     padding: 25px 0px;
     border-top: 3px solid #a34400;
-    background: linear-gradient {
+    background: linear-gradient(
       180deg,
       #a34400 0%,
       #012200 50%,
       #0f0f0f 100%
-    }
+    );
   }
 
   .gigs-grid
@@ -372,9 +373,8 @@ h1, h2, h3
 p
 {
   line-height: 1.5em;
-  width: 95%;
   text-align: justify;
-  margin: 25px;
+  margin: 25px 0;
 }
 
 .social {
@@ -613,8 +613,8 @@ li {
   text-align: left;
   color: #000;
   cursor: pointer;
-  width: 100%;
   max-width: 400px;
+  margin: 0 auto;
   color: #c0c0c0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -660,6 +660,11 @@ li {
 }
 
 @media (max-width: 900px) {
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   body {
     font-size: 10pt;
@@ -713,7 +718,6 @@ li {
   }
 
   .review p {
-    width: 100%;
     text-align: left;
   }
 
