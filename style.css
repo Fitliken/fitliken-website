@@ -730,12 +730,16 @@ li {
     margin-top: 10px;
   }
 
+  div.about {
+    padding: 0 10px;
+  }
+
   p {
     width: 95%;
   }
 
   p.caption {
-    font-size: 0.9em;
+    font-size: 0.5em;
   }
 
   .hero{
