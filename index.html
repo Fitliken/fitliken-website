@@ -180,7 +180,7 @@
         <div class="reviews">
           <h2>What People Say...</h2>
           <div class="review-cards">
-            <div class="review" onclick="window.open('https://maps.app.goo.gl/Fbme9LWpVwZyVHPeA');">
+            <div class="review">
               <div class="review-headline">
                 <p style="font-size: 0.75em">
                   <img src="/images/reviews/star.png" alt="star" class="review-star" />
@@ -188,28 +188,56 @@
                   <img src="/images/reviews/star.png" alt="star" class="review-star" />
                   <img src="/images/reviews/star.png" alt="star" class="review-star" />
                   <img src="/images/reviews/star.png" alt="star" class="review-star" />
-                  &nbsp;&nbsp;Rated 5.0 on Google
+                  &nbsp;&nbsp;Rated 5.0 on <a href="https://maps.app.goo.gl/Fbme9LWpVwZyVHPeA" target="_blank" rel="noopener noreferrer" onclick="gtag('event','review_source_click',{
+                    platform:'google',
+                    location:'reviews_page',
+                    link_url:this.href,
+                    link_domain:'google.com',
+                    transport_type:'beacon',
+                    review: stephen_cruickshank_2026
+                  });">Google</a>.
                 </p>
                 <p style="color: #fff">"Would 100% recommend these guys... looking forward to their return"</p>
                 <p class="review-name">Stephen Cruickshank</p>
                 <p class="review-context">The New Greentrees, Dyce</p>
               </div>
             </div>
-            <div class="review" onclick="window.open('https://www.facebook.com/fitliken/reviews');">
+            <div class="review">
               <div class="review-headline">
-                <p style="font-size: 0.75em">
-                  <img src="/images/reviews/facebook.png" alt="Facebook Recommendation" class="review-thumb" />
-                  &nbsp;&nbsp;Recommended on Facebook
+                <p>&#128077;&nbsp;&nbsp;<span style="font-size: 0.75em;">Recommended on <a href="https://www.facebook.com/fitliken/reviews" target="_blank" rel="noopener noreferrer" onclick="gtag('event','review_source_click',{
+                  platform:'facebook',
+                  location:'reviews_page',
+                  link_url:this.href,
+                  link_domain:'facebook.com',
+                  transport_type:'beacon',
+                  review: 'gerry_robertson_2025'
+                });">Facebook</a></span></p>
                 </p>
                 <p style="color: #fff">"Seen many cover bands in my time and these guys top the list."</p>
                 <p class="review-name">Gerry Robertson</p>
                 <p class="review-context">Wedding Booking</p>
               </div>
-            </div>            
+            </div>          
+            <div class="review">
+              <div class="review-headline">
+                <p>&#128077;&nbsp;&nbsp;<span style="font-size: 0.75em;">Recommended on <a href="https://www.facebook.com/fitliken/reviews" target="_blank" rel="noopener noreferrer" onclick="gtag('event','review_source_click',{
+                  platform:'facebook',
+                  location:'reviews_page',
+                  link_url:this.href,
+                  link_domain:'facebook.com',
+                  transport_type:'beacon',
+                  review: 'michelle_ross_2018'
+                });">Facebook</a></span></p>
+                </p>
+                <p style="color: #fff">"Love this band. They're that good we're having them play our wedding next year."</p>
+                <p class="review-name">Michelle Ross</p>
+                <p class="review-context">Gig-goer</p>
+              </div>
+            </div>               
           </div>
         </div>
       </div>
-      <p class="section-cta">Still not convinced? Read all our <a href="/reviews/">reviews</a>.</p>
+      <p class="section-cta">Still not convinced? <strong>Read all our <a href="/reviews/">reviews</a></strong></p>
       <p class="section-cta">Been to a gig? Leave us a review on either <a href="https://g.page/r/CUHr6VxOQgBSEAI/review" target="_blank">Google</a> or <a href="https://www.facebook.com/fitliken/reviews" target="_blank">Facebook</a> - it really helps us out!</p>
     </section>
     <section class="page" aria-label="Upcoming gigs" id="gigs">
