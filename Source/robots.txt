@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://fitliken.co.uk/sitemap.xml
