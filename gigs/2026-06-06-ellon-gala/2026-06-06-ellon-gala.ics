@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-06-06-balaclava-bar@fitliken.co.uk
+SUMMARY:Fitliken live at the Ellon Gala
+DTSTART;TZID=Europe/London:20260606T133000
+DTEND;TZID=Europe/London:20260606TT143000
+LOCATION:Ellon Gala, Gordon Park, Ellon, Scotland, AB41 9AY
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-07-04-balaclava-bar/
+END:VEVENT
+END:VCALENDAR
