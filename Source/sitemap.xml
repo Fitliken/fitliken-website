@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://fitliken.co.uk/</loc>
+    <priority>1.0</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://fitliken.co.uk/gigs/</loc>
+    <priority>0.9</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://fitliken.co.uk/reviews/</loc>
+    <priority>0.9</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://fitliken.co.uk/gigs/grays-inn-aberdeen-2026-05-03/</loc>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://fitliken.co.uk/gigs/2026-06-06-cuminestown-mcc-rock-night</loc>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+    <url>
+    <loc>https://fitliken.co.uk/gigs/2026-06-27-buckie-thistle</loc>
+    <priority>0.7</priority>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+</urlset>

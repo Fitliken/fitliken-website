@@ -1,0 +1,186 @@
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+  
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 0, 0, 0) 0%,
+      rgba(255, 0, 0, 0.1) 40%,
+      rgba(15, 15, 15, 0.85) 75%,
+      #0f0f0f 100%
+    );
+  
+    pointer-events: none;
+  }
+
+.breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+.gig-page {
+    padding-top: 1.5rem;
+}
+
+.gig-page > h2 {
+    margin-top: 0;
+}
+
+.gig-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start
+  }
+  
+  .gig-details,
+  .gig-media {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .gig-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .gig-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+  }
+
+  .gig-poster {
+    margin-top: 0;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+
+  .gig-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .gig-pagination .btn {
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    padding:0.9rem 1.4rem;
+    text-align: center;
+  }
+
+  .all-gigs {
+    opacity: 0.85;
+  }
+
+  .gig-map
+  {
+    margin-top: 5rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    margin-top: -2rem;
+  }
+
+  .btn-facebook
+  {
+    border: 1px solid rgba(255,255,255,0.9);
+    background: #3b5998;
+    color: #fff;
+  }
+
+  .btn-facebook:hover
+  {
+    border: 1px solid rgba(255,255,255,0.9);
+    background: #1877f2;
+    color: #fff;
+  }
+
+  @media (max-width: 900px) {
+
+    .hero-tagline {
+      margin-top: 1rem;
+    }
+
+    .gig-layout {
+      flex-direction: column;
+    }
+
+    .gig-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gig-media {
+      width: 100%;
+    }
+
+    .gig-pagination {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gig-pagination .btn {
+      display: flex;
+      position: static;
+      width: 100%;
+      max-width: 340px;
+      min-width: 0;
+      margin: 0;
+      padding: 0.9rem 1.4rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  p.lead {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  p.sub {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 9px;
+  }
+
+  p.meta {
+    font-size: 1em;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  .hidden {
+    display: none;
+  }
