@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-06-28-drummonds@fitliken.co.uk
+DTSTAMP:20260608T075703Z
+SUMMARY:Fitliken live at Drummonds
+DTSTART;TZID=Europe/London:20260628T190000
+DTEND;TZID=Europe/London:20260628T220000
+LOCATION:Drummonds, 1 Belmont Street, Aberdeen, Aberdeen, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-06-28-drummonds/
+END:VEVENT
+END:VCALENDAR
