@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-07-11-harbour-lights@fitliken.co.uk
+DTSTAMP:20260608T084445Z
+SUMMARY:Fitliken live at the Harbour Lights
+DTSTART;TZID=Europe/London:20260711T214500
+DTEND;TZID=Europe/London:20260711T004500
+LOCATION:Harbour Lights, 122-124 Longate, Peterhead, Peterhead, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-07-11-harbour-lights/
+END:VEVENT
+END:VCALENDAR
