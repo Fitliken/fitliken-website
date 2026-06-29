@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-08-08-odonoghues@fitliken.co.uk
+DTSTAMP:20260629T094625Z
+SUMMARY:Fitliken live at O'Donoghues, Aberdeen
+DTSTART;TZID=Europe/London:20260808T230000
+DTEND;TZID=Europe/London:20260808T020000
+LOCATION:O'Donoghues, 44 Justice Mill Lane, Aberdeen, Aberdeen, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-08-08-odonoghues/
+END:VEVENT
+END:VCALENDAR
