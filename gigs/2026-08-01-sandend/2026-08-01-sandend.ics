@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-08-01-sandend@fitliken.co.uk
+DTSTAMP:20260629T092643Z
+SUMMARY:Fitliken live at Sandend Village Hall
+DTSTART;TZID=Europe/London:20260801T200000
+DTEND;TZID=Europe/London:20260802T000000
+LOCATION:Sandend Village Hall, The Bents, Sandend, Banff, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-08-01-sandend/
+END:VEVENT
+END:VCALENDAR
