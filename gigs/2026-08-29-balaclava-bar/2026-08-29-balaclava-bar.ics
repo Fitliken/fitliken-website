@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-08-29-balaclava-bar@fitliken.co.uk
+DTSTAMP:20260810T084812Z
+SUMMARY:Fitliken live at Balaclava Bar, Fraserburgh
+DTSTART;TZID=Europe/London:20260829T213000
+DTEND;TZID=Europe/London:20260830T003000
+LOCATION:Balaclava Bar, 79 Shore Street, Fraserburgh, Fraserburgh, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-08-29-balaclava-bar/
+END:VEVENT
+END:VCALENDAR

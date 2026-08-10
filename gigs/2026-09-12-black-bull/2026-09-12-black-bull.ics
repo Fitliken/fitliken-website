@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-09-12-black-bull@fitliken.co.uk
+DTSTAMP:20260810T090032Z
+SUMMARY:Fitliken live at the Black Bull, Inverurie
+DTSTART;TZID=Europe/London:20260912T203000
+DTEND;TZID=Europe/London:20260912T233000
+LOCATION:Black Bull, 50-52 North Street, Inverurie, Inverurie, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-09-12-black-bull/
+END:VEVENT
+END:VCALENDAR

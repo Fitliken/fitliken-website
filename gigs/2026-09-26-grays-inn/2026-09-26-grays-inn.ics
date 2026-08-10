@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Fitliken//Gig Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:2026-09-26-grays-inn@fitliken.co.uk
+DTSTAMP:20260810T090919Z
+SUMMARY:Fitliken live at the Gray's Inn, Aberdeen
+DTSTART;TZID=Europe/London:20260926T210000
+DTEND;TZID=Europe/London:20260926T000000
+LOCATION:Gray's Inn, 1 Greenfern Road, Aberdeen, Aberdeen, GB
+DESCRIPTION:Fitliken live - high-energy rock covers from AC/DC to Foo Fighters.
+URL:https://fitliken.co.uk/gigs/2026-09-26-grays-inn/
+END:VEVENT
+END:VCALENDAR
